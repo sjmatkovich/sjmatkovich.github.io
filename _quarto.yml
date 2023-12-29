@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "sjmatkovich.github.io"
+  title: "Scot J Matkovich"
   navbar:
     left:
       - href: index.qmd

@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Homepage",
+    "section": "",
+    "text": "This website has been built with Quarto.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n3 + 4\n\n[1] 7"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
