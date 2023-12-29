@@ -2,15 +2,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Homepage",
+    "title": "Scot J Matkovich",
     "section": "",
-    "text": "This website has been built with Quarto.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n3 + 4\n\n[1] 7"
+    "text": "Welcome!\nI hold a Ph.D in biochemistry and molecular biology and currently work as a biological research scientist in drug discovery for cardiovascular and metabolic diseases. One of my greatest interests outside my scientific career and the improvement of public health is making music on the piano in the Western classical tradition; a gateway to many other musical pursuits.\n\nProfessional experience\nMy LinkedIn page has a comprehensive profile. As a summary:\n\nDirector / Principal Research Scientist | Eli Lilly and Co | 2018 - present\nAssistant Professor, Department of Medicine | Washington University in St Louis | 2011-2018\nSenior Scientist, Department of Medicine (PI: Gerald W Dorn II) | Washington University in St Louis | 2008-2011\nPostdoctoral appointments at Columbia University in New York (PI: Andrew R Marks) and the University of Cincinnati (PI: Gerald W Dorn II)\n\n\nEducation\nFormal degrees\n\nPh.D (Biochemistry & Molecular Biology), University of Melbourne, Parkville, Australia, 2000. Thesis title ‘Inositol phosphate generation in the heart: mechanisms and functional relevance’. Advisor: Elizabeth A Woodcock\nBSc (Hons.), Department of Physiology, University of Melbourne, Parkville, Australia, 1996.\nBA / BSc, University of Melbourne, Parkville, Australia, 1995. Majors: French, German, music, biochemistry, physiology\n\nCertifications\n\nMultiple edX and Coursera programs in statistics and data science, including most elements of the reputable Johns Hopkins Data Science Specialization series, 2017-2022\nA.Mus.A (Associate in Music, Australia) in piano performance from the Australian Music Examinations Board, 1989"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About this website",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "This site was built by Scot Matkovich using Quarto and is hosted on GitHub Pages.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites"
   }
 ]

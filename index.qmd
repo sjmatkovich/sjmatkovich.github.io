@@ -1,11 +1,52 @@
 ---
-title: "Homepage"
+title: "Scot J Matkovich"
+image: SJM_2014.jpg
+toc: false
+about: 
+  template: solana
+  image-shape: rectangle
+  image-width: 20em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/sjmatkovich/
+    - text: GitHub
+      href: https://github.com/sjmatkovich
+    - text: Email
+      href: mailto:sjmatkovich@live.com
 ---
 
-This website has been built with Quarto.
+**Welcome!**
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+I hold a Ph.D in biochemistry and molecular biology and currently work as a biological research scientist in drug discovery for cardiovascular and metabolic diseases. One of my greatest interests outside my scientific career and the improvement of public health is making music on the piano in the Western classical tradition; a gateway to many other musical pursuits.
 
-```{r}
-3 + 4
-```
+------------------------------------------------------------------------
+
+**Professional experience**
+
+My [LinkedIn page](https://www.linkedin.com/in/sjmatkovich "Scot Matkovich's LinkedIn page") has a comprehensive profile. As a summary:
+
+-   Director / Principal Research Scientist \| Eli Lilly and Co \| 2018 - present
+
+-   Assistant Professor, Department of Medicine \| Washington University in St Louis \| 2011-2018
+
+-   Senior Scientist, Department of Medicine (PI: Gerald W Dorn II) \| Washington University in St Louis \| 2008-2011
+
+-   Postdoctoral appointments at Columbia University in New York (PI: Andrew R Marks) and the University of Cincinnati (PI: Gerald W Dorn II)
+
+------------------------------------------------------------------------
+
+**Education**
+
+**Formal degrees**
+
+-   Ph.D (Biochemistry & Molecular Biology), University of Melbourne, Parkville, Australia, 2000. Thesis title 'Inositol phosphate generation in the heart: mechanisms and functional relevance'. Advisor: Elizabeth A Woodcock
+
+-   BSc (Hons.), Department of Physiology, University of Melbourne, Parkville, Australia, 1996.
+
+-   BA / BSc, University of Melbourne, Parkville, Australia, 1995. Majors: French, German, music, biochemistry, physiology
+
+**Certifications**
+
+-   Multiple edX and Coursera programs in statistics and data science, including most elements of the reputable Johns Hopkins [Data Science Specialization](https://datasciencespecialization.github.io/ "JHU Data Science Specialization") series, 2017-2022
+
+-   A.Mus.A (Associate in Music, Australia) in piano performance from the Australian Music Examinations Board, 1989
