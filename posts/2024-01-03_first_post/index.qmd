@@ -1,0 +1,35 @@
+---
+title: "First post"
+description: "A small set of acknowledgements"
+author:
+    name: Scot J Matkovich
+    url: https://sjmatkovich.github.io/
+    orcid: 0000-0002-7398-6857
+    affiliation: Eli Lilly and Company
+    affiliation-url:  
+date: 2024-01-03
+categories: [Quarto, R, blog, website] # self-defined categories
+image: kelly-sikkema-Rl_ceSSjnuQ-unsplash.jpg
+citation:
+  author: SJ Matkovich
+  url: https://sjmatkovich.github.io/posts/2024-01-03_first_post/ 
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+# A start to documenting my exploration of 'biological data science'
+
+This is merely a first post to establish a personal blog, which also serves as a brief set of acknowledgments and future resources. Any stated opinions or recommendations are entirely my own, independent of professional affiliation.
+
+Resources which were invaluable in getting this website and blog started were:
+
+1.  The description of the Quarto system in Hadley Wickham's 2nd edition of [R for data science](https://r4ds.hadley.nz/ "R for data science, 2nd edition")
+
+2.  Excellent walk-through tutorials on establishing a [website](https://ucsb-meds.github.io/creating-quarto-websites/ "Creating Quarto websites (Samantha Csik)") and [blog](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/#iii.-adding-a-blog-to-your-personal-quarto-website "Add a blog to a Quarto website (Samantha Csik)") with the Quarto system from [Samantha Csik](https://samanthacsik.github.io/ "Samantha Csik's website")
+
+3.  Some of the official [Quarto documentation](https://quarto.org/docs/websites/ "Quarto documentation for websites")
+
+For future enhancement and exploration, I'm looking forward to exploring:
+
+-   The resources listed at the '[Awesome Quarto](https://github.com/mcanouil/awesome-quarto "Github repo with Quarto resources")' github repository
+
+-   More of Samantha Csik's tutorials, specifically on [SASS/CSS website customization](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide "Samantha Csik tutorial on SASS/CSS for Quarto")

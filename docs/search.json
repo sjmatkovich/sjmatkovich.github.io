@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Blog",
+    "section": "",
+    "text": "First post\n\n\n\n\n\n\n\nQuarto\n\n\nR\n\n\nblog\n\n\nwebsite\n\n\n\n\nA small set of acknowledgements\n\n\n\n\n\n\nJan 3, 2024\n\n\nScot J Matkovich\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Scot J Matkovich",
@@ -12,5 +19,12 @@
     "title": "About this website",
     "section": "",
     "text": "This site was built by Scot Matkovich using Quarto and is hosted on GitHub Pages.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites"
+  },
+  {
+    "objectID": "posts/2024-01-03_first_post/index.html",
+    "href": "posts/2024-01-03_first_post/index.html",
+    "title": "First post",
+    "section": "",
+    "text": "A start to documenting my exploration of ‘biological data science’\nThis is merely a first post to establish a personal blog, which also serves as a brief set of acknowledgments and future resources. Any stated opinions or recommendations are entirely my own, independent of professional affiliation.\nResources which were invaluable in getting this website and blog started were:\n\nThe description of the Quarto system in Hadley Wickham’s 2nd edition of R for data science\nExcellent walk-through tutorials on establishing a website and blog with the Quarto system from Samantha Csik\nSome of the official Quarto documentation\n\nFor future enhancement and exploration, I’m looking forward to exploring:\n\nThe resources listed at the ‘Awesome Quarto’ github repository\nMore of Samantha Csik’s tutorials, specifically on SASS/CSS website customization\n\n\n\n\n\nCitationBibTeX citation:@online{matkovich2024,\n  author = {Matkovich, SJ},\n  title = {First Post},\n  date = {2024-01-03},\n  url = {https://sjmatkovich.github.io/posts/2024-01-03_first_post/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nMatkovich, SJ. 2024. “First Post.” January 3, 2024. https://sjmatkovich.github.io/posts/2024-01-03_first_post/."
   }
 ]
