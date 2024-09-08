@@ -201,7 +201,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-empirical-bayes-function-of-limma-isnt-always-desired-but-the-useful-output-tables-are-still-wanted" id="toc-the-empirical-bayes-function-of-limma-isnt-always-desired-but-the-useful-output-tables-are-still-wanted" class="nav-link active" data-scroll-target="#the-empirical-bayes-function-of-limma-isnt-always-desired-but-the-useful-output-tables-are-still-wanted">The empirical Bayes function of <em>limma</em> isn’t always desired, but the useful output tables are still wanted</a></li>
+  <li><a href="#the-empirical-bayes-function-of-limma-isnt-always-desired-but-the-useful-output-tables-are-still-wanted" id="toc-the-empirical-bayes-function-of-limma-isnt-always-desired-but-the-useful-output-tables-are-still-wanted" class="nav-link active" data-scroll-target="#the-empirical-bayes-function-of-limma-isnt-always-desired-but-the-useful-output-tables-are-still-wanted">The empirical Bayes function of <em>limma</em> isn’t always desired, but the useful output tables are still wanted</a>
+  <ul class="collapse">
+  <li><a href="#situation" id="toc-situation" class="nav-link" data-scroll-target="#situation">Situation</a></li>
+  <li><a href="#problem" id="toc-problem" class="nav-link" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#credit-where-credit-is-due" id="toc-credit-where-credit-is-due" class="nav-link" data-scroll-target="#credit-where-credit-is-due">Credit where credit is due</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -214,8 +220,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="the-empirical-bayes-function-of-limma-isnt-always-desired-but-the-useful-output-tables-are-still-wanted" class="level1">
 <h1>The empirical Bayes function of <em>limma</em> isn’t always desired, but the useful output tables are still wanted</h1>
-<p><strong>Situation:</strong> You are preparing differential gene expression calculations with the R/Bioconductor <em>limma</em> package (including RNA-sequencing extensions such as <em>limma-voom</em>). While <em>limma</em> offers empirical Bayes moderation of t-statistics (‘borrowing’ variance estimates across genes), you have a large number of individual samples or have other reasons to avoid this procedure.</p>
-<p><strong>Problem:</strong> Omitting the <code>eBayes</code> step in the limma workflow means that t-statistics are not calculated, and the useful <code>topTable</code> function of the package to summarize differential expression calculations does not function.</p>
+<section id="situation" class="level2">
+<h2 class="anchored" data-anchor-id="situation">Situation</h2>
+<p>You are preparing differential gene expression calculations with the R/Bioconductor <em>limma</em> package (including RNA-sequencing extensions such as <em>limma-voom</em>). While <em>limma</em> offers empirical Bayes moderation of t-statistics (‘borrowing’ variance estimates across genes), you have a large number of individual samples or have other reasons to avoid this procedure.</p>
+</section>
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p>Omitting the <code>eBayes</code> step in the limma workflow means that t-statistics are not calculated, and the useful <code>topTable</code> function of the package to summarize differential expression calculations does not function.</p>
 <p>For example (assuming that you have prepared a DGEList object <code>d</code>, a model formula <code>design</code> and a contrasts matrix <code>contrasts.matrix</code>), a typical workflow including empirical Bayes moderation would be as follows:</p>
 <div class="cell" data-code-copy="true">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">voom</span>(d, design, <span class="at">plot =</span> T)</span>
@@ -230,6 +241,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># No restrictions are placed on the output of topTable (number=Inf)</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(x[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)]) <span class="co"># to extract important columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
 <p>An alternative workflow which does not use empirical Bayes moderation and calculates t-statistics separately would be as follows:</p>
 <div class="cell" data-code-copy="true">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">voom</span>(d, design, <span class="at">plot =</span> T)</span>
@@ -246,10 +260,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(x[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)]) <span class="co"># this drops the B value (lods) from the output as it is not correct</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note the last line of the second workflow, which drops the ‘dummy’ B value needed for <code>topTable</code> to work. This is a limitation of this workaround. I suspect the ‘dummy’ B value could be almost anything, but for convenience I extracted it from the initial, empirical Bayes-moderated <code>vfit_eb</code> object. Typically I am interested in parallel calculations with and without the empirical Bayes step.</p>
-<p><strong>Credit where credit is due</strong>: I discovered this workaround in Google and/or Stack Overflow searches in 2023 but did not carefully note its source. It may well have been suggested by one of the <em>limma</em> package authors.</p>
+</section>
+<section id="credit-where-credit-is-due" class="level2">
+<h2 class="anchored" data-anchor-id="credit-where-credit-is-due">Credit where credit is due</h2>
+<p>I discovered this workaround in Google and/or Stack Overflow searches in 2023 but did not carefully note its source. It may well have been suggested by one of the <em>limma</em> package authors.</p>
 <p>I have placed this same material in a <a href="https://gist.github.com/sjmatkovich/19a31d1eaec20bdb18b841c58faf04c6" title="limma without eBayes 2024">gist</a></p>
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{matkovich2024,
