@@ -1,0 +1,67 @@
+---
+title: "Using limma without empirical Bayes"
+description: "Modifying the R/Bioconductor limma workflow"
+author:
+    name: Scot J Matkovich
+    url: https://sjmatkovich.github.io/
+    orcid: 0000-0002-7398-6857
+    affiliation: Eli Lilly and Company
+    affiliation-url:  
+date: 2024-09-07
+categories: [R, Bioconductor, limma, differential gene expression, empirical Bayes, blog] # self-defined categories
+citation:
+  author: SJ Matkovich
+  url: https://sjmatkovich.github.io/posts/2024-09-07_limma_without_empirical_Bayes/ 
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+# The empirical Bayes function of *limma* isn't always desired, but the useful output tables are still wanted
+
+**Situation:** You are preparing differential gene expression calculations with the R/Bioconductor *limma* package (including RNA-sequencing extensions such as *limma-voom*). While *limma* offers empirical Bayes moderation of t-statistics ('borrowing' variance estimates across genes), you have a large number of individual samples or have other reasons to avoid this procedure.
+
+**Problem:** Omitting the `eBayes` step in the limma workflow means that t-statistics are not calculated, and the useful `topTable` function of the package to summarize differential expression calculations does not function.
+
+For example (assuming that you have prepared a DGEList object `d`, a model formula `design` and a contrasts matrix `contrasts.matrix`), a typical workflow including empirical Bayes moderation would be as follows:
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-copy: true
+v <- voom(d, design, plot = T)
+vfit <- lmFit(v, design)
+vfit_c <- contrasts.fit(vfit, contrasts=contrast.matrix)
+
+# Empirical Bayes moderation
+vfit_eb <- eBayes(vfit_c, 0.01) # estimating that 1% of genes are differentially expressed
+
+x <- topTable(vfit_eb, number=Inf, coef=z, sort.by="none")
+# z is the contrast of interest
+# No restrictions are placed on the output of topTable (number=Inf)
+df <- as.data.frame(x[,c(1:6)]) # to extract important columns
+```
+
+An alternative workflow which does not use empirical Bayes moderation and calculates t-statistics separately would be as follows:
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-copy: true
+v <- voom(d, design, plot = T)
+vfit <- lmFit(v, design)
+vfit_c <- contrasts.fit(vfit, contrasts=contrast.matrix)
+
+vfit_c$t <- vfit_c$coef/vfit_c$stdev.unscaled/vfit_c$sigma
+vfit_c$p.value <- 2 * pt(-abs(vfit_c$t), df = vfit_c$df.residual)
+vfit_c$lods <- vfit_eb$lods
+# log-odds of differential expression:
+# this is not technically correct in this instance but permits the subsequent topTable function to work
+
+x <- topTable(vfit_c, number=Inf, coef=z, sort.by="none") # z is the contrast of interest
+df <- as.data.frame(x[,c(1:5)]) # this drops the B value (lods) from the output as it is not correct
+```
+
+Note the last line of the second workflow, which drops the 'dummy' B value needed for `topTable` to work. This is a limitation of this workaround. I suspect the 'dummy' B value could be almost anything, but for convenience I extracted it from the initial, empirical Bayes-moderated `vfit_eb` object. Typically I am interested in parallel calculations with and without the empirical Bayes step.
+
+**Credit where credit is due**: I discovered this workaround in Google and/or Stack Overflow searches in 2023 but did not carefully note its source. It may well have been suggested by one of the *limma* package authors.
+
+I have placed this same material in a [gist](https://gist.github.com/sjmatkovich/19a31d1eaec20bdb18b841c58faf04c6 "limma without eBayes 2024")
