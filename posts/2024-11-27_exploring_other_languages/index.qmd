@@ -13,7 +13,7 @@ image: python-kaggle.svg
 citation:
   author: SJ Matkovich
   url: https://sjmatkovich.github.io/posts/2024-11-27_exploring_other_languages/ 
-draft: true # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---
 
 # A few tentative steps beyond the R environment I know well
@@ -24,7 +24,7 @@ I've taken seriously the recommendations of several experts to become highly com
 
 Nonetheless, I've wanted to develop some ability in Python for a couple of reasons:\
 \* One of the three major environments for single-cell / single-nucleus is Python-based (the [scverse](https://scverse.org/)), in contrast to the R-based [Seurat](https://satijalab.org/seurat/) and Bioconductor [SingleCellExperiment](https://bioconductor.org/books/release/OSCA/) approaches\
-\* Google has a [mini machine-learning course](https://developers.google.com/machine-learning/crash-course) that uses Python for its exercises. I'd like to take advantage of a quick refresher course such as this to update my learning from the ['Practical Machine Learning' module](https://www.coursera.org/learn/practical-machine-learning?specialization=jhu-data-science) of the Johns Hopkins Data Science Specialization on Coursera, which I took a few years ago.\
+\* Google has a [mini machine-learning course](https://developers.google.com/machine-learning/crash-course) that uses Python for its exercises. I'd like to take advantage of a quick refresher course such as this to update my learning from the ['Practical Machine Learning' module](https://www.coursera.org/learn/practical-machine-learning?specialization=jhu-data-science) of the Johns Hopkins Data Science Specialization on Coursera, which I took a few years ago.
 
 ## Python
 
@@ -33,3 +33,11 @@ Just to get my feet wet with the essential syntax and structures, I found this i
 I'm going to supplement this with a couple of recommended prerequisites for Google's course: [NumPy](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/numpy_ultraquick_tutorial.ipynb?utm_source=mlcc&utm_campaign=colab-external&utm_medium=referral&utm_content=mlcc-prework&hl=en) and [pandas](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb?utm_source=mlcc&utm_campaign=colab-external&utm_medium=referral&utm_content=mlcc-prework&hl=en)
 
 ## Nextflow
+
+Nextflow? Why Nextflow?
+
+My workplace is migrating from an on-premises compute environment for genomic and genetic analyses. Most of the pre-defined omics workflows are from the [nfcore](https://nf-co.re/) project. While it's relatively unlikely that I'll be developing new pipelines or substantially modifying current ones, I had the opportunity to take two days of live training based on Seqera's [online material](https://training.nextflow.io/#in-depth-nextflow-training), so why not?\
+
+One of the comments made by the trainers was that Nextflow should be considered for individual workflows, not just for analyses requiring compute-cluster scale. The advantages lie in reproducibility, and in avoiding the need to re-compute time-consuming steps of a workflow that have not changed (compared to notebooks / Quarto documents).\
+
+How might this compare to e.g. the R [{targets}](https://github.com/ropensci/targets) package?

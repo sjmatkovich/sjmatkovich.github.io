@@ -4,7 +4,7 @@
     "href": "posts.html",
     "title": "Blog",
     "section": "",
-    "text": "Using limma without empirical Bayes\n\n\n\n\n\n\nR\n\n\nBioconductor\n\n\nlimma\n\n\ndifferential gene expression\n\n\nempirical Bayes\n\n\nblog\n\n\n\nModifying the R/Bioconductor limma workflow\n\n\n\n\n\nSep 7, 2024\n\n\nScot J Matkovich\n\n\n\n\n\n\n\n\n\n\n\n\nFirst post\n\n\n\n\n\n\nQuarto\n\n\nR\n\n\nblog\n\n\nwebsite\n\n\n\nA small set of acknowledgements\n\n\n\n\n\nJan 3, 2024\n\n\nScot J Matkovich\n\n\n\n\n\n\nNo matching items"
+    "text": "Exploring other languages\n\n\n\n\n\n\nPython\n\n\nGoogle\n\n\nKaggle\n\n\nmachine learning\n\n\nNextflow\n\n\nSeqera\n\n\nblog\n\n\n\nFirst steps with Python and Nextflow\n\n\n\n\n\nNov 27, 2024\n\n\nScot J Matkovich\n\n\n\n\n\n\n\n\n\n\n\n\nUsing limma without empirical Bayes\n\n\n\n\n\n\nR\n\n\nBioconductor\n\n\nlimma\n\n\ndifferential gene expression\n\n\nempirical Bayes\n\n\nblog\n\n\n\nModifying the R/Bioconductor limma workflow\n\n\n\n\n\nSep 7, 2024\n\n\nScot J Matkovich\n\n\n\n\n\n\n\n\n\n\n\n\nFirst post\n\n\n\n\n\n\nQuarto\n\n\nR\n\n\nblog\n\n\nwebsite\n\n\n\nA small set of acknowledgements\n\n\n\n\n\nJan 3, 2024\n\n\nScot J Matkovich\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -61,5 +61,26 @@
     "title": "Using limma without empirical Bayes",
     "section": "",
     "text": "I discovered this workaround in Google and/or Stack Overflow searches in 2023 but did not carefully note its source. It may well have been suggested by one of the limma package authors.\nI have placed this same material in a gist"
+  },
+  {
+    "objectID": "posts/2024-11-27_exploring_other_languages/index.html",
+    "href": "posts/2024-11-27_exploring_other_languages/index.html",
+    "title": "Exploring other languages",
+    "section": "",
+    "text": "R was the first language in which I developed a level of proficiency and continues to be the major language I use for biological data science. The Bioconductor environment was the selling point for me.\n\nI’ve taken seriously the recommendations of several experts to become highly competent in one programming language before moving on to others, and knowing a little about a large number of languages only goes so far.\n\nNonetheless, I’ve wanted to develop some ability in Python for a couple of reasons:\n* One of the three major environments for single-cell / single-nucleus is Python-based (the scverse), in contrast to the R-based Seurat and Bioconductor SingleCellExperiment approaches\n* Google has a mini machine-learning course that uses Python for its exercises. I’d like to take advantage of a quick refresher course such as this to update my learning from the ‘Practical Machine Learning’ module of the Johns Hopkins Data Science Specialization on Coursera, which I took a few years ago.\n\n\nJust to get my feet wet with the essential syntax and structures, I found this introductory series on Kaggle to be very helpful: https://www.kaggle.com/learn/python\nI’m going to supplement this with a couple of recommended prerequisites for Google’s course: NumPy and pandas\n\n\n\nNextflow? Why Nextflow?\nMy workplace is migrating from an on-premises compute environment for genomic and genetic analyses. Most of the pre-defined omics workflows are from the nfcore project. While it’s relatively unlikely that I’ll be developing new pipelines or substantially modifying current ones, I had the opportunity to take two days of live training based on Seqera’s online material, so why not?\n\nOne of the comments made by the trainers was that Nextflow should be considered for individual workflows, not just for analyses requiring compute-cluster scale. The advantages lie in reproducibility, and in avoiding the need to re-compute time-consuming steps of a workflow that have not changed (compared to notebooks / Quarto documents).\n\nHow might this compare to e.g. the R {targets} package?"
+  },
+  {
+    "objectID": "posts/2024-11-27_exploring_other_languages/index.html#python",
+    "href": "posts/2024-11-27_exploring_other_languages/index.html#python",
+    "title": "Exploring other languages",
+    "section": "",
+    "text": "Just to get my feet wet with the essential syntax and structures, I found this introductory series on Kaggle to be very helpful: https://www.kaggle.com/learn/python\nI’m going to supplement this with a couple of recommended prerequisites for Google’s course: NumPy and pandas"
+  },
+  {
+    "objectID": "posts/2024-11-27_exploring_other_languages/index.html#nextflow",
+    "href": "posts/2024-11-27_exploring_other_languages/index.html#nextflow",
+    "title": "Exploring other languages",
+    "section": "",
+    "text": "Nextflow? Why Nextflow?\nMy workplace is migrating from an on-premises compute environment for genomic and genetic analyses. Most of the pre-defined omics workflows are from the nfcore project. While it’s relatively unlikely that I’ll be developing new pipelines or substantially modifying current ones, I had the opportunity to take two days of live training based on Seqera’s online material, so why not?\n\nOne of the comments made by the trainers was that Nextflow should be considered for individual workflows, not just for analyses requiring compute-cluster scale. The advantages lie in reproducibility, and in avoiding the need to re-compute time-consuming steps of a workflow that have not changed (compared to notebooks / Quarto documents).\n\nHow might this compare to e.g. the R {targets} package?"
   }
 ]

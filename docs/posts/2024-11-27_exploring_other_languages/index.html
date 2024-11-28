@@ -7,8 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Scot J Matkovich">
+<meta name="dcterms.date" content="2024-11-27">
+<meta name="description" content="First steps with Python and Nextflow">
 
-<title>Blog – Scot J Matkovich</title>
+<title>Exploring other languages – Scot J Matkovich</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Scot J Matkovich</span>
     </a>
   </div>
@@ -150,15 +92,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About this website</span></a>
   </li>  
 </ul>
@@ -169,192 +111,116 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Exploring other languages</h1>
+                  <div>
+        <div class="description">
+          First steps with Python and Nextflow
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Python</div>
+                <div class="quarto-category">Google</div>
+                <div class="quarto-category">Kaggle</div>
+                <div class="quarto-category">machine learning</div>
+                <div class="quarto-category">Nextflow</div>
+                <div class="quarto-category">Seqera</div>
+                <div class="quarto-category">blog</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page-left">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://sjmatkovich.github.io/">Scot J Matkovich</a> <a href="https://orcid.org/0000-0002-7398-6857" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              Eli Lilly and Company
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page-left">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 27, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Bioconductor">Bioconductor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Google">Google <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Kaggle">Kaggle <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Nextflow">Nextflow <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Seqera">Seqera <span class="quarto-category-count">(1)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(3)</span></div><div class="category" data-category="differential gene expression">differential gene expression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="empirical Bayes">empirical Bayes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="limma">limma <span class="quarto-category-count">(1)</span></div><div class="category" data-category="machine learning">machine learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="website">website <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a-few-tentative-steps-beyond-the-r-environment-i-know-well" id="toc-a-few-tentative-steps-beyond-the-r-environment-i-know-well" class="nav-link active" data-scroll-target="#a-few-tentative-steps-beyond-the-r-environment-i-know-well">A few tentative steps beyond the R environment I know well</a>
+  <ul class="collapse">
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#nextflow" id="toc-nextflow" class="nav-link" data-scroll-target="#nextflow">Nextflow</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
-
-
-
-<div class="quarto-title-meta column-page-left">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Scot J Matkovich </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
+<section id="a-few-tentative-steps-beyond-the-r-environment-i-know-well" class="level1">
+<h1>A few tentative steps beyond the R environment I know well</h1>
+<p>R was the first language in which I developed a level of proficiency and continues to be the major language I use for biological data science. The Bioconductor environment was the selling point for me.<br>
+</p>
+<p>I’ve taken seriously the recommendations of several experts to become highly competent in one programming language before moving on to others, and knowing a little about a large number of languages only goes so far.<br>
+</p>
+<p>Nonetheless, I’ve wanted to develop some ability in Python for a couple of reasons:<br>
+* One of the three major environments for single-cell / single-nucleus is Python-based (the <a href="https://scverse.org/">scverse</a>), in contrast to the R-based <a href="https://satijalab.org/seurat/">Seurat</a> and Bioconductor <a href="https://bioconductor.org/books/release/OSCA/">SingleCellExperiment</a> approaches<br>
+* Google has a <a href="https://developers.google.com/machine-learning/crash-course">mini machine-learning course</a> that uses Python for its exercises. I’d like to take advantage of a quick refresher course such as this to update my learning from the <a href="https://www.coursera.org/learn/practical-machine-learning?specialization=jhu-data-science">‘Practical Machine Learning’ module</a> of the Johns Hopkins Data Science Specialization on Coursera, which I took a few years ago.</p>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python">Python</h2>
+<p>Just to get my feet wet with the essential syntax and structures, I found this introductory series on Kaggle to be very helpful: https://www.kaggle.com/learn/python</p>
+<p>I’m going to supplement this with a couple of recommended prerequisites for Google’s course: <a href="https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/numpy_ultraquick_tutorial.ipynb?utm_source=mlcc&amp;utm_campaign=colab-external&amp;utm_medium=referral&amp;utm_content=mlcc-prework&amp;hl=en">NumPy</a> and <a href="https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb?utm_source=mlcc&amp;utm_campaign=colab-external&amp;utm_medium=referral&amp;utm_content=mlcc-prework&amp;hl=en">pandas</a></p>
+</section>
+<section id="nextflow" class="level2">
+<h2 class="anchored" data-anchor-id="nextflow">Nextflow</h2>
+<p>Nextflow? Why Nextflow?</p>
+<p>My workplace is migrating from an on-premises compute environment for genomic and genetic analyses. Most of the pre-defined omics workflows are from the <a href="https://nf-co.re/">nfcore</a> project. While it’s relatively unlikely that I’ll be developing new pipelines or substantially modifying current ones, I had the opportunity to take two days of live training based on Seqera’s <a href="https://training.nextflow.io/#in-depth-nextflow-training">online material</a>, so why not?<br>
+</p>
+<p>One of the comments made by the trainers was that Nextflow should be considered for individual workflows, not just for analyses requiring compute-cluster scale. The advantages lie in reproducibility, and in avoiding the need to re-compute time-consuming steps of a workflow that have not changed (compared to notebooks / Quarto documents).<br>
+</p>
+<p>How might this compare to e.g.&nbsp;the R <a href="https://github.com/ropensci/targets">{targets}</a> package?</p>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-left" data-index="0" data-categories="Python,Google,Kaggle,machine learning,Nextflow,Seqera,blog" data-listing-date-sort="1732683600000" data-listing-file-modified-sort="1732755731350" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317">
-<div class="thumbnail">
-<p><a href="./posts/2024-11-27_exploring_other_languages/index.html" class="no-external"></a></p><a href="./posts/2024-11-27_exploring_other_languages/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-11-27_exploring_other_languages/python-kaggle.svg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-11-27_exploring_other_languages/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-11-27_exploring_other_languages/index.html" class="no-external">Exploring other languages</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-11-27_exploring_other_languages/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Google'); return false;">
-Google
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Kaggle'); return false;">
-Kaggle
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine learning'); return false;">
-machine learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Nextflow'); return false;">
-Nextflow
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Seqera'); return false;">
-Seqera
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
-blog
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-11-27_exploring_other_languages/index.html" class="no-external">First steps with Python and Nextflow</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-11-27_exploring_other_languages/index.html" class="no-external">
-<div class="listing-date">
-Nov 27, 2024
-</div>
-<div class="listing-author">
-Scot J Matkovich
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-left" data-index="1" data-categories="R,Bioconductor,limma,differential gene expression,empirical Bayes,blog" data-listing-date-sort="1725681600000" data-listing-file-modified-sort="1725760713271" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="375">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-07_limma_without_empirical_Bayes/index.html" class="no-external"></a></p><a href="./posts/2024-09-07_limma_without_empirical_Bayes/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-09-07_limma_without_empirical_Bayes/bioconductor_logo.svg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-07_limma_without_empirical_Bayes/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-07_limma_without_empirical_Bayes/index.html" class="no-external">Using limma without empirical Bayes</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-07_limma_without_empirical_Bayes/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Bioconductor'); return false;">
-Bioconductor
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('limma'); return false;">
-limma
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('differential gene expression'); return false;">
-differential gene expression
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('empirical Bayes'); return false;">
-empirical Bayes
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
-blog
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-07_limma_without_empirical_Bayes/index.html" class="no-external">Modifying the R/Bioconductor limma workflow</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-07_limma_without_empirical_Bayes/index.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2024
-</div>
-<div class="listing-author">
-Scot J Matkovich
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-left" data-index="2" data-categories="Quarto,R,blog,website" data-listing-date-sort="1704258000000" data-listing-file-modified-sort="1725758649227" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="159">
-<div class="thumbnail">
-<p><a href="./posts/2024-01-03_first_post/index.html" class="no-external"></a></p><a href="./posts/2024-01-03_first_post/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-01-03_first_post/kelly-sikkema-Rl_ceSSjnuQ-unsplash.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-01-03_first_post/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-01-03_first_post/index.html" class="no-external">First post</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-01-03_first_post/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-Quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
-blog
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('website'); return false;">
-website
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-01-03_first_post/index.html" class="no-external">A small set of acknowledgements</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-01-03_first_post/index.html" class="no-external">
-<div class="listing-date">
-Jan 3, 2024
-</div>
-<div class="listing-author">
-Scot J Matkovich
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{matkovich2024,
+  author = {Matkovich, SJ},
+  title = {Exploring Other Languages},
+  date = {2024-11-27},
+  url = {https://sjmatkovich.github.io/posts/2024-11-27_exploring_other_languages/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-matkovich2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Matkovich, SJ. 2024. <span>“Exploring Other Languages.”</span> November
+27, 2024. <a href="https://sjmatkovich.github.io/posts/2024-11-27_exploring_other_languages/">https://sjmatkovich.github.io/posts/2024-11-27_exploring_other_languages/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
