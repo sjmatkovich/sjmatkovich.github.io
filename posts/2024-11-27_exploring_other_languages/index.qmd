@@ -9,7 +9,7 @@ author:
     affiliation-url:  
 date: 2024-11-27
 categories: [Python, Google, Kaggle, machine learning, Nextflow, Seqera, blog] # self-defined categories
-image: python-kaggle.svg
+image:  "python-kaggle.svg"
 citation:
   author: SJ Matkovich
   url: https://sjmatkovich.github.io/posts/2024-11-27_exploring_other_languages/ 
