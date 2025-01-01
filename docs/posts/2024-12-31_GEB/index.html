@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Scot J Matkovich">
-<meta name="dcterms.date" content="2024-11-27">
-<meta name="description" content="First steps with Python and Nextflow">
+<meta name="dcterms.date" content="2024-12-31">
+<meta name="description" content="A Mindful Jig with Koans">
 
-<title>Exploring other languages – Scot J Matkovich</title>
+<title>Kurt, Maurits and Johann – Scot J Matkovich</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,20 +114,21 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Exploring other languages</h1>
+      <h1 class="title">Kurt, Maurits and Johann</h1>
                   <div>
         <div class="description">
-          First steps with Python and Nextflow
+          A Mindful Jig with Koans
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Python</div>
-                <div class="quarto-category">Google</div>
-                <div class="quarto-category">Kaggle</div>
-                <div class="quarto-category">machine learning</div>
-                <div class="quarto-category">Nextflow</div>
-                <div class="quarto-category">Seqera</div>
-                <div class="quarto-category">blog</div>
+                <div class="quarto-category">cognition</div>
+                <div class="quarto-category">recursion</div>
+                <div class="quarto-category">self-reference</div>
+                <div class="quarto-category">mu</div>
+                <div class="quarto-category">AI</div>
+                <div class="quarto-category">J S Bach</div>
+                <div class="quarto-category">canon</div>
+                <div class="quarto-category">fugue</div>
               </div>
                   </div>
   </div>
@@ -152,10 +153,16 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 27, 2024</p>
+        <p class="date">December 31, 2024</p>
       </div>
     </div>
     
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">December 31, 2024</p>
+      </div>
+    </div>
       
     </div>
     
@@ -168,10 +175,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a-few-tentative-steps-beyond-the-r-environment-i-know-well" id="toc-a-few-tentative-steps-beyond-the-r-environment-i-know-well" class="nav-link active" data-scroll-target="#a-few-tentative-steps-beyond-the-r-environment-i-know-well">A few tentative steps beyond the R environment I know well</a>
+  <li><a href="#tackling-douglas-hofstadters-gödel-escher-bach-in-earnest" id="toc-tackling-douglas-hofstadters-gödel-escher-bach-in-earnest" class="nav-link active" data-scroll-target="#tackling-douglas-hofstadters-gödel-escher-bach-in-earnest">Tackling Douglas Hofstadter’s “Gödel, Escher, Bach” in earnest</a>
   <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#nextflow" id="toc-nextflow" class="nav-link" data-scroll-target="#nextflow">Nextflow</a></li>
+  <li><a href="#progress-at-the-time-of-writing" id="toc-progress-at-the-time-of-writing" class="nav-link" data-scroll-target="#progress-at-the-time-of-writing">Progress at the time of writing</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -183,28 +189,35 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="a-few-tentative-steps-beyond-the-r-environment-i-know-well" class="level1">
-<h1>A few tentative steps beyond the R environment I know well</h1>
-<p>R was the first language in which I developed a level of proficiency and continues to be the major language I use for biological data science. The Bioconductor environment was the selling point for me.<br>
+<section id="tackling-douglas-hofstadters-gödel-escher-bach-in-earnest" class="level1">
+<h1>Tackling Douglas Hofstadter’s “Gödel, Escher, Bach” in earnest</h1>
+<p>This book comprises a (probably unique) adventure through phenomena of self-reference, formal systems, and their limits in mathematics, art and music, in the pursuit of conveying the author’s point of view of how unique human consciousness arises from fundamental biological processes.<br>
 </p>
-<p>I’ve taken seriously the recommendations of several experts to become highly competent in one programming language before moving on to others, and knowing a little about a large number of languages only goes so far.<br>
+<p>That’s a mouthful! And is all in likeliness less than a complete summary, due to the sheer scope of this book. It dates from 1979, and has made such an impact on the appreciation of so many fields that it has its own <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">Wikipedia page</a><br>
 </p>
-<p>Nonetheless, I’ve wanted to develop some ability in Python for a couple of reasons:<br>
-* One of the three major environments for single-cell / single-nucleus is Python-based (the <a href="https://scverse.org/">scverse</a>), in contrast to the R-based <a href="https://satijalab.org/seurat/">Seurat</a> and Bioconductor <a href="https://bioconductor.org/books/release/OSCA/">SingleCellExperiment</a> approaches<br>
-* Google has a <a href="https://developers.google.com/machine-learning/crash-course">mini machine-learning course</a> that uses Python for its exercises. I’d like to take advantage of a quick refresher course such as this to update my learning from the <a href="https://www.coursera.org/learn/practical-machine-learning?specialization=jhu-data-science">‘Practical Machine Learning’ module</a> of the Johns Hopkins Data Science Specialization on Coursera, which I took a few years ago.</p>
-<section id="python" class="level2">
-<h2 class="anchored" data-anchor-id="python">Python</h2>
-<p>Just to get my feet wet with the essential syntax and structures, I found this introductory series on Kaggle to be very helpful: https://www.kaggle.com/learn/python</p>
-<p>I’m going to supplement this with a couple of recommended prerequisites for Google’s course: <a href="https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/numpy_ultraquick_tutorial.ipynb?utm_source=mlcc&amp;utm_campaign=colab-external&amp;utm_medium=referral&amp;utm_content=mlcc-prework&amp;hl=en">NumPy</a> and <a href="https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb?utm_source=mlcc&amp;utm_campaign=colab-external&amp;utm_medium=referral&amp;utm_content=mlcc-prework&amp;hl=en">pandas</a></p>
-</section>
-<section id="nextflow" class="level2">
-<h2 class="anchored" data-anchor-id="nextflow">Nextflow</h2>
-<p>Nextflow? Why Nextflow?</p>
-<p>My workplace is migrating from an on-premises compute environment for genomic and genetic analyses. Most of the pre-defined omics workflows are from the <a href="https://nf-co.re/">nfcore</a> project. While it’s relatively unlikely that I’ll be developing new pipelines or substantially modifying current ones, I had the opportunity to take two days of live training based on Seqera’s <a href="https://training.nextflow.io/#in-depth-nextflow-training">online material</a>, so why not?<br>
+<p>Indeed, this is how the <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">Wikipedia page</a> describes the work:</p>
+<hr>
+<center>
+<div style="font-size: 0.9rem;">
+<p>“…By exploring common themes in the lives and works of logician Kurt Gödel, artist M. C. Escher, and composer Johann Sebastian Bach, the book expounds concepts fundamental to mathematics, symmetry, and intelligence. Through short stories, illustrations, and analysis, the book discusses how systems can acquire meaningful context despite being made of”meaningless” elements. It also discusses self-reference and formal rules, isomorphism, what it means to communicate, how knowledge can be represented and stored, the methods and limitations of symbolic representation, and even the fundamental notion of “meaning” itself.</p>
+<p>In response to confusion over the book’s theme, Hofstadter emphasized that Gödel, Escher, Bach is not about the relationships of mathematics, art, and music, but rather about how cognition emerges from hidden neurological mechanisms. One point in the book presents an analogy about how individual neurons in the brain coordinate to create a unified sense of a coherent mind by comparing it to the social organization displayed in a colony of ants.</p>
+<p>Gödel, Escher, Bach won the Pulitzer Prize for General Nonfiction and the National Book Award for Science Hardcover. …”</p>
+</div>
+</center>
+<hr>
+<p>Maybe an expansive, interdisciplinary work such as this may have more than one theme. I was first attracted to this book as a college student, hoping to read a well-researched viewpoint on the relationships of mathematics, art and music. The list of chapters promised substantial wordplay and showed a love for the music of J S Bach, even before beginning to read. And I had always warmed to the impossible pseudo-reality of Escher’s art.<br>
 </p>
-<p>One of the comments made by the trainers was that Nextflow should be considered for individual workflows, not just for analyses requiring compute-cluster scale. The advantages lie in reproducibility, and in avoiding the need to re-compute time-consuming steps of a workflow that have not changed (compared to notebooks / Quarto documents).<br>
+<p>But in that first attempt at the book, and I think one other I started since, I became bogged down in the descriptions of formal systems and number theory and found it difficult to relate Gödel’s incompleteness theorem to the other strands of thought in the book in anything other than a superficial manner.<br>
 </p>
-<p>How might this compare to e.g.&nbsp;the R <a href="https://github.com/ropensci/targets">{targets}</a> package?</p>
+<p>This holiday season has given me the opportunity to tackle the work in earnest, once more. I have the soul of a musician, not a mathematician, and I don’t think I’m fully grasping the author’s explanations toward his vision of how the limits of mathematical theorem induction relate to how human cognition ‘escapes’ the bounds of the rule-based ‘formal system’ of human neuronal biology. Nontheless, this is the most I’ve ever grasped of this book, aided in no small part by the appreciation I’ve developed for the music of J S Bach in the years since.<br>
+</p>
+<p>Perhaps the most important takeaway - and one of the main reasons I picked up this volume again - is the author’s view of whether “Artificial Intelligence” can emerge from a rules-based, but sufficiently complex system. That mechanical system may not necessarily be the neurons of a carbon-based life form. Although this book substantially predates many developments in computing and statistical learning (especially the emergence of GPTs and LLMs), it seems to elaborate many worthwhile principles for understanding modern developments. (Given the length of time that has passed, I wonder what the author’s opinion might be of potential outcomes and limits of the current ‘AI’ wave?)<br>
+</p>
+<p>It is indeed an enormous read whose key concepts could likely be conveyed in much less text. I wonder, though, whether it would make the same impact on the reader’s mind and memory without the vivid metaphors and imagery (and the almost exhaustingly clever wordplay). If you’re not a fan of understanding more of the underpinnings of mathematical systems, of canons, fugues and hidden patterns in music, or of visual deception in art, then you would likely not find enough entertainment in this book to make it to the core of Hofstadter’s message.<br>
+</p>
+<section id="progress-at-the-time-of-writing" class="level2">
+<h2 class="anchored" data-anchor-id="progress-at-the-time-of-writing">Progress at the time of writing</h2>
+<p>Approximately 480 of 720 pages read. I’ll update this blog post with further progress and comments - hopefully I will finish in the next couple of weeks.</p>
 
 
 </section>
@@ -212,14 +225,14 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{matkovich2024,
   author = {Matkovich, SJ},
-  title = {Exploring Other Languages},
-  date = {2024-11-27},
-  url = {https://sjmatkovich.github.io/posts/2024-11-27_exploring_other_languages/},
+  title = {Kurt, {Maurits} and {Johann}},
+  date = {2024-12-31},
+  url = {https://sjmatkovich.github.io/posts/2024-12-31_GEB/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-matkovich2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Matkovich, SJ. 2024. <span>“Exploring Other Languages.”</span> November
-27, 2024. <a href="https://sjmatkovich.github.io/posts/2024-11-27_exploring_other_languages/">https://sjmatkovich.github.io/posts/2024-11-27_exploring_other_languages/</a>.
+Matkovich, SJ. 2024. <span>“Kurt, Maurits and Johann.”</span> December
+31, 2024. <a href="https://sjmatkovich.github.io/posts/2024-12-31_GEB/">https://sjmatkovich.github.io/posts/2024-12-31_GEB/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

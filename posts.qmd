@@ -4,7 +4,9 @@ author: "Scot J Matkovich"
 listing: 
   contents: posts # all Quarto docs in the `posts` directory will be included on your listing page
   type: default # `default`, `grid` or `table`; each type has its own set of yaml options to include
+  fields: [title, subtitle, description, date, image]
   sort: "date desc" # can also sort on more than one field
   categories: true # allows you to sort posts by assigned categories
   image-align: left
+  # image-height: 80px
 ---
