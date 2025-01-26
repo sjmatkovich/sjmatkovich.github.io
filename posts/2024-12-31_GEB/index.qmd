@@ -6,7 +6,7 @@ author:
     url: https://sjmatkovich.github.io/
     orcid: 0000-0002-7398-6857
 date: 2024-12-31
-date-modified: 2024-12-31
+date-modified: 2025-01-07
 categories: [cognition, recursion, self-reference, mu, AI, J S Bach, canon, fugue] # self-defined categories
 image:  "GEB_20th_anniversary_edition.jpg"
 citation:
@@ -52,3 +52,5 @@ It is indeed an enormous read whose key concepts could likely be conveyed in muc
 ## Progress at the time of writing
 
 Approximately 480 of 720 pages read. I'll update this blog post with further progress and comments - hopefully I will finish in the next couple of weeks.
+
+2025-01-07: another several chapters; approximately 600 pages completed

@@ -1,0 +1,23 @@
+---
+title: "GEB meets DOG"
+description: "Ingesting the content"
+author:
+    name: Scot J Matkovich
+    url: https://sjmatkovich.github.io/
+    orcid: 0000-0002-7398-6857
+date: 2025-01-10
+categories: [cognition, recursion, self-reference, mu, AI, J S Bach, canon, fugue] # self-defined categories
+image:  "GEB_chewed.jpg"
+citation:
+  author: SJ Matkovich
+  url: https://sjmatkovich.github.io/posts/2025-01-07_dog_ate_GEB/ 
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+# The dog ate my homework...
+
+So close to the end of GEB, as all the strands were really coming together... and I left it out on a table. Unfortunately, my dog's attempt to ingest the material started from the back of the book.\
+
+![GEB chewed](GEB_chewed.jpg)
+
+I rarely pay for rapid shipping of anything, but there's now an urgent package on its way to me.
