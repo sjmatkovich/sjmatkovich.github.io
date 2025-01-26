@@ -5,8 +5,6 @@ author:
     name: Scot J Matkovich
     url: https://sjmatkovich.github.io/
     orcid: 0000-0002-7398-6857
-    affiliation: Eli Lilly and Company
-    affiliation-url:  
 date: 2024-01-03
 categories: [Quarto, R, blog, website] # self-defined categories
 image: kelly-sikkema-Rl_ceSSjnuQ-unsplash.jpg
