@@ -5,8 +5,6 @@ author:
     name: Scot J Matkovich
     url: https://sjmatkovich.github.io/
     orcid: 0000-0002-7398-6857
-    affiliation: Eli Lilly and Company
-    affiliation-url:  
 date: 2024-09-07
 categories: [R, Bioconductor, limma, differential gene expression, empirical Bayes, blog] # self-defined categories
 image: bioconductor_logo.svg
