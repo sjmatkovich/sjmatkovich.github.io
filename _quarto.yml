@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Scot J Matkovich"
+  title: "SJM"
   navbar:
     left:
       - href: index.qmd
