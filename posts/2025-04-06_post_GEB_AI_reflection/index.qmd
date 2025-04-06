@@ -1,0 +1,34 @@
+---
+title: "Post-GEB reflection"
+description: "Precision vs brute-force modeling"
+author:
+    name: Scot J Matkovich
+    url: https://sjmatkovich.github.io/
+    orcid: 0000-0002-7398-6857
+date: 2025-04-06
+categories: [cognition, recursion, self-reference, AI, LLM, inference, serendipity, Copilot] # self-defined categories
+citation:
+  author: SJ Matkovich
+  url: https://sjmatkovich.github.io/posts/2025-04-06_post_GEB_AI_reflection/ 
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+I did indeed finish my re-read of GEB in the later part of January. What still resonates a few months later?\
+
+1.  This is not a concise work. The Lewis Carroll, Escher, and J S Bach references are enormously entertaining, but ultimately the book's theme of whether it possible for humans to understand the basis of their own cognition and intelligence could be summarized via the last 100 pages or so.\
+
+2.  A [previous blog post](https://sjmatkovich.github.io/posts/2024-12-31_GEB/) outlines major features of the book.\
+
+3.  The cognition scientists and modelers of the 1970s and beforehand recreated aspects of human intelligence by devising algorithms and decision networks, often complex for their time, and tested their predictions against the ground truth of human decision-making. To me, there is a parallel to traditional statistical modeling and inference, in which there is a quest to identify the numerical distribution of a population that performs best for in future prediction.\
+
+4.  At some relatively recent point, it became possible to bypass the progressive, selective layering of rules upon rules to satisfy the limitations of computational architecture. We can now generate huge networks with millions of nodes, not to mention edges, based on all manner of publicly availabe data, and fine-tune them to better align predictions with ground truth.\
+
+5.  I regard the above approach as 'brute-force' modeling in which the underlying inference models and decision networks cannot be readily dissected, compare to models built from decision networks constructed *a priori*.\
+
+6.  Even as I write this text, Github Copilot is busily attempting to predict the likely next phrase I might wish to type based on its deployment of LLMs. In my view, such engines provide excellent guides to the 'average' or 'bulk' composition of similar text blocks in their training data. In other words, what do most people write in similar situations (and now, as 'AI' engines supply text for humans to post on the internet, is there a reinforcement selection process to further guide 'regression to the mediocrity', to quote Galton?)\
+
+7.  Could Hofstadter and colleagues in the 1970s have predicted how massive computational architecture would change the playing field for the development and understanding of AI? It would be churlish to criticize an earlier generation for not being able to see into the future.\
+
+8.  Do we need more serendipity in our writing, to distinguish *de novo* human thought from AI-assisted text writing? How many LLMs could predict that I will now type 'Supercalifragilisticexpialidocious' as an attempted sign that a flesh-and-blood human wrote this post?\
+
+9.  A rambling post such as this shows that I'm still digesting thoughts...

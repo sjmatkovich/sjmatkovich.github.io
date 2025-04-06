@@ -7,8 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Scot J Matkovich">
+<meta name="dcterms.date" content="2025-04-06">
+<meta name="description" content="Precision vs brute-force modeling">
 
-<title>Blog – SJM</title>
+<title>Post-GEB reflection – SJM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-description','listing-date','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">SJM</span>
     </a>
   </div>
@@ -150,15 +92,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About this website</span></a>
   </li>  
 </ul>
@@ -169,181 +111,97 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <h1 class="title">Post-GEB reflection</h1>
+                  <div>
+        <div class="description">
+          Precision vs brute-force modeling
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">cognition</div>
+                <div class="quarto-category">recursion</div>
+                <div class="quarto-category">self-reference</div>
+                <div class="quarto-category">AI</div>
+                <div class="quarto-category">LLM</div>
+                <div class="quarto-category">inference</div>
+                <div class="quarto-category">serendipity</div>
+                <div class="quarto-category">Copilot</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p><a href="https://sjmatkovich.github.io/">Scot J Matkovich</a> <a href="https://orcid.org/0000-0002-7398-6857" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 6, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="AI">AI <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Bioconductor">Bioconductor <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Copilot">Copilot <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Google">Google <span class="quarto-category-count">(1)</span></div><div class="category" data-category="J S Bach">J S Bach <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Kaggle">Kaggle <span class="quarto-category-count">(1)</span></div><div class="category" data-category="LLM">LLM <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Nextflow">Nextflow <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Seqera">Seqera <span class="quarto-category-count">(1)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(3)</span></div><div class="category" data-category="canon">canon <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cognition">cognition <span class="quarto-category-count">(3)</span></div><div class="category" data-category="differential gene expression">differential gene expression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="empirical Bayes">empirical Bayes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="fugue">fugue <span class="quarto-category-count">(2)</span></div><div class="category" data-category="inference">inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="limma">limma <span class="quarto-category-count">(1)</span></div><div class="category" data-category="machine learning">machine learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mu">mu <span class="quarto-category-count">(2)</span></div><div class="category" data-category="recursion">recursion <span class="quarto-category-count">(3)</span></div><div class="category" data-category="self-reference">self-reference <span class="quarto-category-count">(3)</span></div><div class="category" data-category="serendipity">serendipity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="website">website <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
-
-
-
-<div class="quarto-title-meta column-page-left">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Scot J Matkovich </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-4">
-<div class="g-col-1" data-index="0" data-categories="cognition,recursion,self-reference,AI,LLM,inference,serendipity,Copilot" data-listing-date-sort="1743912000000" data-listing-file-modified-sort="1743943905735" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="433">
-<a href="./posts/2025-04-06_post_GEB_AI_reflection/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Post-GEB reflection
-</h5>
-<div class="card-text listing-description">
-Precision vs brute-force modeling
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Apr 6, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="cognition,recursion,self-reference,mu,AI,J S Bach,canon,fugue" data-listing-date-sort="1736485200000" data-listing-file-modified-sort="1737861614880" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="57">
-<a href="./posts/2025-01-07_dog_ate_GEB/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2025-01-07_dog_ate_GEB/GEB_chewed.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<p>I did indeed finish my re-read of GEB in the later part of January. What still resonates a few months later?<br>
 </p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-GEB meets DOG
-</h5>
-<div class="card-text listing-description">
-Ingesting the content
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jan 10, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="cognition,recursion,self-reference,mu,AI,J S Bach,canon,fugue" data-listing-date-sort="1735621200000" data-listing-file-modified-sort="1737859993400" data-listing-date-modified-sort="1736226000000" data-listing-reading-time-sort="4" data-listing-word-count-sort="729">
-<a href="./posts/2024-12-31_GEB/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2024-12-31_GEB/GEB_20th_anniversary_edition.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Kurt, Maurits and Johann
-</h5>
-<div class="card-text listing-description">
-A Mindful Jig with Koans
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Dec 31, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Python,Google,Kaggle,machine learning,Nextflow,Seqera,blog" data-listing-date-sort="1732683600000" data-listing-file-modified-sort="1737859497916" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317">
-<a href="./posts/2024-11-27_exploring_other_languages/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2024-11-27_exploring_other_languages/python-kaggle.svg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Exploring other languages
-</h5>
-<div class="card-text listing-description">
-First steps with Python and Nextflow
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Nov 27, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="R,Bioconductor,limma,differential gene expression,empirical Bayes,blog" data-listing-date-sort="1725681600000" data-listing-file-modified-sort="1737859433528" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="375">
-<a href="./posts/2024-09-07_limma_without_empirical_Bayes/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2024-09-07_limma_without_empirical_Bayes/bioconductor_logo.svg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Using limma without empirical Bayes
-</h5>
-<div class="card-text listing-description">
-Modifying the R/Bioconductor limma workflow
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Sep 7, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="Quarto,R,blog,website" data-listing-date-sort="1704258000000" data-listing-file-modified-sort="1737859176864" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="159">
-<a href="./posts/2024-01-03_first_post/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/2024-01-03_first_post/kelly-sikkema-Rl_ceSSjnuQ-unsplash.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-First post
-</h5>
-<div class="card-text listing-description">
-A small set of acknowledgements
-</div>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Jan 3, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<ol type="1">
+<li><p>This is not a concise work. The Lewis Carroll, Escher, and J S Bach references are enormously entertaining, but ultimately the book’s theme of whether it possible for humans to understand the basis of their own cognition and intelligence could be summarized via the last 100 pages or so.<br>
+</p></li>
+<li><p>A <a href="https://sjmatkovich.github.io/posts/2024-12-31_GEB/">previous blog post</a> outlines major features of the book.<br>
+</p></li>
+<li><p>The cognition scientists and modelers of the 1970s and beforehand recreated aspects of human intelligence by devising algorithms and decision networks, often complex for their time, and tested their predictions against the ground truth of human decision-making. To me, there is a parallel to traditional statistical modeling and inference, in which there is a quest to identify the numerical distribution of a population that performs best for in future prediction.<br>
+</p></li>
+<li><p>At some relatively recent point, it became possible to bypass the progressive, selective layering of rules upon rules to satisfy the limitations of computational architecture. We can now generate huge networks with millions of nodes, not to mention edges, based on all manner of publicly availabe data, and fine-tune them to better align predictions with ground truth.<br>
+</p></li>
+<li><p>I regard the above approach as ‘brute-force’ modeling in which the underlying inference models and decision networks cannot be readily dissected, compare to models built from decision networks constructed <em>a priori</em>.<br>
+</p></li>
+<li><p>Even as I write this text, Github Copilot is busily attempting to predict the likely next phrase I might wish to type based on its deployment of LLMs. In my view, such engines provide excellent guides to the ‘average’ or ‘bulk’ composition of similar text blocks in their training data. In other words, what do most people write in similar situations (and now, as ‘AI’ engines supply text for humans to post on the internet, is there a reinforcement selection process to further guide ‘regression to the mediocrity’, to quote Galton?)<br>
+</p></li>
+<li><p>Could Hofstadter and colleagues in the 1970s have predicted how massive computational architecture would change the playing field for the development and understanding of AI? It would be churlish to criticize an earlier generation for not being able to see into the future.<br>
+</p></li>
+<li><p>Do we need more serendipity in our writing, to distinguish <em>de novo</em> human thought from AI-assisted text writing? How many LLMs could predict that I will now type ‘Supercalifragilisticexpialidocious’ as an attempted sign that a flesh-and-blood human wrote this post?<br>
+</p></li>
+<li><p>A rambling post such as this shows that I’m still digesting thoughts…</p></li>
+</ol>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{matkovich2025,
+  author = {Matkovich, SJ},
+  title = {Post-GEB Reflection},
+  date = {2025-04-06},
+  url = {https://sjmatkovich.github.io/posts/2025-04-06_post_GEB_AI_reflection/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-matkovich2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Matkovich, SJ. 2025. <span>“Post-GEB Reflection.”</span> April 6, 2025.
+<a href="https://sjmatkovich.github.io/posts/2025-04-06_post_GEB_AI_reflection/">https://sjmatkovich.github.io/posts/2025-04-06_post_GEB_AI_reflection/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
