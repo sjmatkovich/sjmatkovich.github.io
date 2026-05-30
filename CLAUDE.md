@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal website and blog for Scot J Matkovich, built with [Quarto](https://quarto.org/) and hosted on GitHub Pages. The rendered output lives in the `docs/` directory (configured as the GitHub Pages source).
+This is a personal website and blog for Scot J Matkovich, built with [Quarto](https://quarto.org/) and hosted on GitHub Pages. Source lives on `main`; a GitHub Actions workflow re-renders the site and publishes the built HTML to the `gh-pages` branch on every push to `main`.
 
 ## Build Commands
 
@@ -23,12 +23,13 @@ The project also has an RStudio project file (`sjmatkovich.github.io.Rproj`), so
 
 ## Architecture
 
-- **`_quarto.yml`** — Site-wide configuration: output dir (`docs/`), navbar, HTML theme (`yeti`), CSS file
+- **`_quarto.yml`** — Site-wide configuration: navbar, HTML theme (`yeti`), CSS file (output dir is the Quarto default `_site/`, which is gitignored)
 - **`index.qmd`** — Home page using the `solana` about template
 - **`posts.qmd`** — Blog listing page (grid layout, sorted newest-first, category filtering enabled)
 - **`posts/`** — One subdirectory per post, named `YYYY-MM-DD_slug/`, each containing `index.qmd`
 - **`posts/_metadata.yml`** — Shared post settings: `freeze: auto` (prevents re-render unless changed), `title-block-banner: true`
-- **`docs/`** — Rendered HTML output committed to the repo; this is what GitHub Pages serves
+- **`_site/`** — Local Quarto render output (gitignored); GitHub Pages serves the `gh-pages` branch that CI publishes, not this directory
+- **`.github/workflows/publish.yml`** — CI: on push to `main`, sets up Quarto and runs `quarto publish gh-pages` to render and deploy the site
 - **`_freeze/`** — Quarto freeze cache for computed outputs (R code chunks); committed to repo so posts don't re-execute unless their source changes
 - **`styles.css`** — Site-wide CSS overrides (currently minimal)
 
@@ -53,4 +54,8 @@ draft: false
 
 ## Deployment
 
-After rendering, commit both `docs/` and `_freeze/` changes. GitHub Pages serves from `docs/` on the `main` branch. There is no CI pipeline — rendering and committing is done manually.
+Deployment is automated by GitHub Actions (`.github/workflows/publish.yml`): every push to `main` re-renders the site and publishes the built HTML to the `gh-pages` branch via `quarto publish gh-pages`. GitHub Pages is configured to serve from `gh-pages` (root). Do **not** commit build output to `main` — just commit source changes and push.
+
+`quarto render` / `quarto preview` are still used locally for previewing (output goes to the gitignored `_site/`).
+
+The site currently has no executable code chunks, so CI needs only Quarto. If posts gain `#| eval: true` R/Python chunks, either (a) add the relevant runtime + dependency-restore steps to the workflow so CI executes them, or (b) keep executing locally and commit the refreshed `_freeze/` so CI publishes without executing (`freeze: auto` skips execution when source matches the freeze).

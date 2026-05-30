@@ -1,6 +1,7 @@
 project:
   type: website
-  output-dir: docs
+  # output-dir defaults to _site; the site is published to the gh-pages
+  # branch by CI (.github/workflows/publish.yml), not committed to main.
 
 website:
   title: "SJM"
