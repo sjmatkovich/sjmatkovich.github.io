@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
   <a href="https://github.com/sjmatkovich" class="about-link" rel="" target="">
      <span class="about-link-text">GitHub</span>
   </a>
-  <a href="mailto:sjmatkovich@live.com" class="about-link" rel="" target="">
+  <a href="/#" class="about-link" rel="" target="">
      <span class="about-link-text">Email</span>
   </a>
 </div>
@@ -162,6 +162,28 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://www.linkedin.com/in/sjmatkovich/details/certifications/">Multiple edX and Coursera programs</a> in statistics and data science, including most elements of the reputable Johns Hopkins <a href="https://datasciencespecialization.github.io/" title="JHU Data Science Specialization">Data Science Specialization</a> series</p></li>
 <li><p>A.Mus.A (Associate in Music, Australia) in piano performance from the Australian Music Examinations Board</p></li>
 </ul>
+<script>
+// Assemble the email address at runtime so it never appears in the page
+// source, reducing harvesting by spam bots. The sidebar "Email" link starts
+// as href="#" and is rewritten to the real mailto: target on load.
+(function () {
+  var user = "sjmatkovich";
+  var domain = "live.com";
+  function maskEmail() {
+    var links = document.querySelectorAll("a.about-link, .about-links a");
+    for (var i = 0; i < links.length; i++) {
+      if ((links[i].textContent || "").trim() === "Email") {
+        links[i].setAttribute("href", "mailto:" + user + "@" + domain);
+      }
+    }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", maskEmail);
+  } else {
+    maskEmail();
+  }
+})();
+</script>
 
 
 </main></div>
