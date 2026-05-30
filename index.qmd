@@ -12,7 +12,7 @@ about:
     - text: GitHub
       href: https://github.com/sjmatkovich
     - text: Email
-      href: mailto:sjmatkovich@live.com
+      href: "#"
 ---
 
 **Welcome!**
@@ -52,3 +52,28 @@ My [LinkedIn page](https://www.linkedin.com/in/sjmatkovich "Scot Matkovich's Lin
 -   [Multiple edX and Coursera programs](https://www.linkedin.com/in/sjmatkovich/details/certifications/) in statistics and data science, including most elements of the reputable Johns Hopkins [Data Science Specialization](https://datasciencespecialization.github.io/ "JHU Data Science Specialization") series
 
 -   A.Mus.A (Associate in Music, Australia) in piano performance from the Australian Music Examinations Board
+
+```{=html}
+<script>
+// Assemble the email address at runtime so it never appears in the page
+// source, reducing harvesting by spam bots. The sidebar "Email" link starts
+// as href="#" and is rewritten to the real mailto: target on load.
+(function () {
+  var user = "sjmatkovich";
+  var domain = "live.com";
+  function maskEmail() {
+    var links = document.querySelectorAll("a.about-link, .about-links a");
+    for (var i = 0; i < links.length; i++) {
+      if ((links[i].textContent || "").trim() === "Email") {
+        links[i].setAttribute("href", "mailto:" + user + "@" + domain);
+      }
+    }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", maskEmail);
+  } else {
+    maskEmail();
+  }
+})();
+</script>
+```
