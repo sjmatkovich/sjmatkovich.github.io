@@ -6,3 +6,6 @@
 .quarto
 
 /.quarto/
+
+# Quarto render output (built site is published to gh-pages by CI, not committed)
+/_site/
